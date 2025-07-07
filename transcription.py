@@ -759,12 +759,36 @@ You are given a preliminary JSON object from a Whisper transcription, the ground
     *   Is there a gap or breath that should create a word boundary?
     *   Does the reference lyrics support this duration?
 
-### **5. Translation Guidelines**
+### **5. Translation Guidelines: Persona-Driven Lyrical Adaptation**
 
-*  **Main Goal:** Your main goal in translating is localizing. You should localize the song into english. Some creative liberties are fine, as long as they fit the song and its themes.
-*  **Feelings:** Convey the feelings and the intended meaning of the song the best.
-*  **Localization First:** Your main job is to localize the translation for an English audience.
-*  **Rhythm Consideration:** When possible, try to maintain similar syllable counts and rhythm patterns to the original for better karaoke experience.
+Your role here is not a direct translator, but a master lyricist, adapting the song's soul into English. Your entire approach must be dictated by the original persona. This is a multi-step process.
+
+**Step 1: Identify the Core Persona.**
+Analyze the original lyrics to determine the speaker's voice. This is your most important task. Ask these questions:
+*   **What is their emotional state?** (e.g., Angry, sad, hopeful, arrogant, vulnerable)
+*   **What is their attitude?** (e.g., Cynical, sweet, demanding, pleading)
+*   **What is the overall mood of the song?** (e.g., Aggressive rock, theatrical ballad, sweet pop)
+
+**Step 2: Select the Lyrical Style.**
+Based on your persona analysis, choose a corresponding English lyrical style. The goal is authenticity.
+*   **For an Aggressive, Cynical, or Modern Persona:**
+    *   **Use:** Sharp, colloquial, and even provocative modern slang.
+    *   **Vocabulary:** `bitch`, `piss off`, `talking shit`, `loser`, `unalive`, `lol`, `GG`.
+    *   **Goal:** Capture a raw, contemporary, often internet-savvy edge.
+*   **For a Dramatic, Arrogant, or Tragic Persona:**
+    *   **Use:** Poetic, weighty, and theatrical language with a slightly formal or elevated tone.
+    *   **Vocabulary:** `privilege`, `eternity`, `filthy`, `traitor`, `disappear`, `pass right now`.
+    *   **Goal:** Convey a sense of high drama, self-importance, and emotional weight.
+*   **For a Sweet, Vulnerable, or Hopeful Persona:**
+    *   **Use:** Simple, earnest, and sincere language. The tone is often pleading or gentle.
+    *   **Vocabulary:** `Can I please?`, `I wanna be`, `secret feelings`, `tremble from fear`.
+    *   **Goal:** Capture a sense of innocence, longing, and fairy-tale-like wonder.
+
+**Step 3: Execute the Adaptation.**
+Apply your chosen style while following these core principles:
+*   **Impact Over Literalism:** The feeling of the line is more important than a word-for-word translation. Recreate the emotional impact.
+*   **Cultural Equivalents:** Translate the *function* of slang or cultural references, not just their definition. `アッシー` (chauffeur) becomes "wheels." `乙` (dismissive slang) becomes "bye loser" or "GG."
+*   **The Performance Test (Litmus Test):** Before finalizing, ask: **"Does this sound like a real, singable song lyric, or does it sound like a subtitle?"** If it sounds like a subtitle, rewrite it to be more punchy, rhythmic, and lyrical.
 
 ### **6. Example**
 ```json
@@ -1117,13 +1141,13 @@ class SieveTranscriber(Transcriber):
                 custom_vocabulary={},
                 translation_backend="None",
                 target_language="",
-                segmentation_backend="ffmpeg-silence",
+                segmentation_backend="vad",
                 min_segment_length=-1,
                 min_silence_length=0.4,
-                vad_threshold=0.6,
+                vad_threshold=0.85,
                 pyannote_segmentation_threshold=0.8,
                 chunks=[],
-                denoise_backend="sieve-resemble-enhance",
+                denoise_backend="None",
                 initial_prompt=""
             )
 

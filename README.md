@@ -13,7 +13,7 @@ This project is a comprehensive suite of tools designed to automate the creation
 -   **Karaoke File Generation**:
     -   Creates `.ass` subtitle files with syllable-level karaoke effects (`\k`).
     -   Supports standard and multi-line "instrumental" karaoke formats.
-    -   Optionally generates a final karaoke video with the subtitles burned in using FFmpeg. (Currently super broken)
+    -   Optionally generates a final karaoke video with the subtitles burned in using FFmpeg. 
 -   **Modular & Configurable**: Each step is a separate script, allowing for flexibility and manual intervention.
 
 ## Workflow
