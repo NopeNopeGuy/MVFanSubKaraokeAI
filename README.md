@@ -79,8 +79,8 @@ pip install -r requirements.txt
 You must have **FFmpeg** installed and available in your system's PATH. This is required for audio processing by `pydub`, `yt-dlp`, and for video creation.
 
 -   **On Ubuntu/Debian**: `sudo apt-get install ffmpeg`
--   **On macOS (Homebrew)**: `brew install ffmpeg`
--   **On Windows**: Download from [ffmpeg.org](https://ffmpeg.org/download.html) and add the `bin` directory to your PATH.
+-   **On macOS (Homebrew)**: `brew install ffmpeg` (macOS is not officially supported)
+-   **On Windows**: Download from [ffmpeg.org](https://ffmpeg.org/download.html) and add the `bin` directory to your PATH. (Windows is not officially supported)
 
 ### API Keys and Authentication
 
