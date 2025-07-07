@@ -1108,7 +1108,7 @@ class SieveTranscriber(Transcriber):
 
             output = self.transcribe_function.run(
                 file=sieve_file,
-                backend="whisperx-whisper-large-v3",
+                backend="whisper-timestamped-whisper-large-v3",
                 word_level_timestamps=True,
                 source_language="auto",
                 diarization_backend="None",
@@ -1120,7 +1120,7 @@ class SieveTranscriber(Transcriber):
                 segmentation_backend="ffmpeg-silence",
                 min_segment_length=-1,
                 min_silence_length=0.4,
-                vad_threshold=0.2,
+                vad_threshold=0.6,
                 pyannote_segmentation_threshold=0.8,
                 chunks=[],
                 denoise_backend="sieve-resemble-enhance",

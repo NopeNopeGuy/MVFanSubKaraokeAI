@@ -99,7 +99,6 @@ def run_demucs(input_audio_path, output_vocals_path, output_instrumental_path):
             model="htdemucs_ft",
             two_stems="vocals",
             audio_format="mp3",
-     shifts=1,
             overlap=0.25
         )
 
