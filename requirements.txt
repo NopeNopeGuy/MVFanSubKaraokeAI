@@ -1,0 +1,10 @@
+google-genai
+pydub
+whisper-timestamped
+torch
+torchaudio
+pykakasi
+sieve-python
+yt-dlp
+requests
+lyricsgenius
