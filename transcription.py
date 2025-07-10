@@ -690,7 +690,7 @@ class WhisperGeminiTranscriber(Transcriber):
         """
         self.sieve_transcriber = SieveTranscriber(api_key=gemini_api_key)
         self.gemini_client = genai.Client(api_key=gemini_api_key)
-        self.gemini_model_name = "gemini-2.5-flash"                                            
+        self.gemini_model_name = "gemini-2.5-pro"                                            
         print(f"✓ Sieve-Gemini transcriber initialized for enhancement with model: {self.gemini_model_name}")
 
     def create_enhancement_prompt(self, audio_duration_str: str) -> str:

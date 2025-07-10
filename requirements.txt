@@ -8,3 +8,6 @@ sieve-python
 yt-dlp
 requests
 lyricsgenius
+pyyaml
+baml-py
+python-dotenv
