@@ -377,7 +377,7 @@ class WhisperGeminiTranscriber(Transcriber):
         """
         self.sieve_transcriber = SieveTranscriber(api_key=gemini_api_key)
         self.gemini_client = genai.Client(api_key=gemini_api_key, http_options={'api_version': 'v1beta'})
-        self.gemini_model_name = "gemini-2.5-flash"
+        self.gemini_model_name = "gemini-2.5-pro"
         print(f"✓ Sieve-Gemini transcriber initialized for enhancement with model: {self.gemini_model_name}")
 
     def create_enhancement_prompt(self, audio_duration_str: str) -> str:
@@ -758,7 +758,7 @@ Output only the raw, corrected, and enhanced JSON object in the specified list-b
                     thinking_config = types.ThinkingConfig(
                         thinking_budget=8000,
                     ),
-                    temperature=0.7,
+                    temperature=1.0,
                     system_instruction=system_prompt,
                     max_output_tokens=65536,
                     response_mime_type="application/json",
@@ -814,7 +814,7 @@ class SieveTranscriber(Transcriber):
                 custom_vocabulary={},
                 translation_backend="None",
                 target_language="",
-                segmentation_backend="vad",
+                segmentation_backend="ffmpeg-silence",
                 min_segment_length=-1,
                 min_silence_length=0.4,
                 vad_threshold=0.85,

@@ -46,6 +46,7 @@ python transcription.py "Song_Name/vocals.mp3" --model whisper-gemini --lyrics "
 
 This will produce `transcription.json` inside the song's directory.
 
+
 ### 3. Create Subtitles (`creator.py`)
 
 This script takes the `transcription.json` file and generates the final karaoke `.ass` subtitle file. It can also generate a video if the instrumental track is present.
@@ -63,6 +64,7 @@ This creates:
 -   `transcription.ass`: The standard karaoke subtitle file.
 -   `transcription_instrumental.ass`: The instrumental-style subtitle file.
 -   `transcription_karaoke_video.mp4`: The final karaoke video.
+
 
 ## Setup
 
@@ -144,3 +146,7 @@ python creator.py <input_json> [--output <output.ass>] [--translate] [--instrume
 -   **`--update-json`**: Saves translations back into the input JSON file.
 -   **`--instrumental-karaoke`**: Generates a second `.ass` file with larger, multi-line subtitles suitable for a video with no original vocals.
 -   **`--generate-video`**: Creates an MP4 video by combining the instrumental `.ass` file with the `instrumental.mp3` audio in the same directory. Requires `--instrumental-karaoke`.
+
+## Example: Using `whisper-gemini` with `gemini-2.5-pro`
+Here's an example of the output generated using the `whisper-gemini` model with `gemini-2.5-pro` for enhanced transcription:
+[![Example using whisper-gemini with gemini-2.5-pro](https://img.youtube.com/vi/Cah13Dr1AXI/maxresdefault.jpg)](https://youtu.be/Cah13Dr1AXI)
